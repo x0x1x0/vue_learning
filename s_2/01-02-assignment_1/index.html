@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@3.4.9/dist/vue.global.js" defer></script> 
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <section id="assignment">
+      <h2>{{ name }}</h2>
+      <p>age: {{ age }}</p>
+      <p>{{ calculateAge() }}</p>
+      <!-- Displaying a random number using a method -->
+      <p>Favorite Number (Method): {{ randomNumber() }}</p>
+      <!-- Displaying a random number directly in the template (This will not re-calculate on re-renders unless the component itself is re-rendered) -->
+      <p>Favorite Number (Direct): {{ Math.random() }}</p>
+      <div>
+        <img v-bind:src="imageUrl" alt="Some Image" />
+      </div>
+      <!-- Prepopulate the input field with your name -->
+      <input type="text" v-model="name" />
+    </section>
+  </body>
+  
+</html>
